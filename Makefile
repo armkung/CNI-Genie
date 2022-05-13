@@ -25,6 +25,7 @@ clean:
 release: clean
 
 # Build the genie cni plugin
+# export GO111MODULE=on
 dist/genie: $(SRCFILES)
 	@GOPATH=$(GO_PATH) CGO_ENABLED=0 go build -v -i -o dist/genie \
 	-ldflags "-X main.VERSION=1.0 -s -w" cni-genie.go
